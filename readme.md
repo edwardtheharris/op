@@ -70,6 +70,7 @@ The following was obtained by running the script on the author's workstation.
 
 1. Execution of the script.
 
+   <!-- markdownlint-disable MD013 -->
    ```sh
    bash install.sh amd64
    ---
@@ -90,6 +91,7 @@ The following was obtained by running the script on the author's workstation.
     extracting: op/op.sig
      inflating: op/op
    ```
+   <!-- markdownlint-enable -->
 
 2. Verification of its location.
 
@@ -101,6 +103,7 @@ The following was obtained by running the script on the author's workstation.
 
 3. Verification that the installed program runs as expected.
 
+    <!-- markdownlint-disable MD013 -->
    ```sh
    op
    ---
@@ -154,6 +157,7 @@ The following was obtained by running the script on the author's workstation.
 
    Run 'op [command] --help' for more information on the command.
    ```
+   <!-- markdownlint-enable -->
 
 ## New Versions
 
