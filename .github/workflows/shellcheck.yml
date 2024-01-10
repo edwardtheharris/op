@@ -1,5 +1,5 @@
 on:
-  push: 
+  push:
 
 name: Run ShellCheck
 permissions: {}
@@ -14,17 +14,17 @@ jobs:
         uses: ludeeus/action-shellcheck@master
         with:
           # A space separated list of additional filename to check
-          #additional_files: # optional, default is 
+          #additional_files: # optional, default is
           # Paths to ignore when running ShellCheck
           # ignore: # optional, default is IN
           # Paths to ignore when running ShellCheck
-          #ignore_paths: # optional, default is 
+          #ignore_paths: # optional, default is
           # Names to ignore when running ShellCheck
-          #ignore_names: # optional, default is 
+          #ignore_names: # optional, default is
           # Minimum severity of errors to consider. Options: [error, warning, info, style]
-          #severity: # optional, default is 
+          #severity: # optional, default is
           # Run shellcheck on _all_ files at once, instead of one at a time
-          check_together: yes 
+          check_together: yes
           # Directory to be searched for files. Defaults to .
           #scandir: # optional, default is .
           # Set to true to skip using problem-matcher
@@ -33,13 +33,3 @@ jobs:
           #format: # optional, default is gcc
           # Specify a concrete version of ShellCheck to use
           #version: # optional, default is stable
-  markdownlint:
-    name: Markdown Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - uses: nosborn/github-action-markdown-cli@master
-        with:
-          files: >
-            *.md
-        

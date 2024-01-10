@@ -1,0 +1,16 @@
+on:
+  push:
+
+name: Run ShellCheck
+permissions: {}
+jobs:
+  markdownlint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: nosborn/github-action-markdown-cli@master
+        with:
+          files: >
+            *.md
+

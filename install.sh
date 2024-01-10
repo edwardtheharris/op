@@ -13,20 +13,20 @@ done
 
 if [ -z "$ARCH" ]; then
   printf "Please select from the following architectures.\n"
-  printf "\n\t1) 386\n\t2) amd64\n\t3) arm\n\t4) arm64\n"
+  printf "\n   1) 386\n   2) amd64\n   3) arm\n   4) arm64\n\n"
   arch_index=0
   read -r -n 1 -p "Select your architecture: " arch_index
   ARCH="${arches[$arch_index]}"
   printf "\nProceeding with %s-compatibile installation.\n" "$ARCH"
 fi
 
-wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.24.0/op_linux_${ARCH}_v2.24.0.zip" -O /tmp/op.zip 
+wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.24.0/op_linux_${ARCH}_v2.24.0.zip" -O /tmp/op.zip
 cd /tmp || exit
-unzip -d op op.zip 
-sudo mv op/op /usr/local/bin 
-rm -r op.zip op 
+unzip -d op op.zip
+sudo mv op/op /usr/local/bin
+rm -r op.zip op
 
-sudo groupadd -f onepassword-cli 
+sudo groupadd -f onepassword-cli
 sudo chgrp onepassword-cli /usr/local/bin/op
 sudo chmod g+s /usr/local/bin/op
 
