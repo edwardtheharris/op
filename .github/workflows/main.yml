@@ -33,3 +33,13 @@ jobs:
           #format: # optional, default is gcc
           # Specify a concrete version of ShellCheck to use
           #version: # optional, default is stable
+  markdownlint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: nosborn/github-action-markdown-cli@master
+        with:
+          files: >
+            *.md
+        
