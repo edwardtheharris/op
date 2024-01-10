@@ -1,6 +1,7 @@
 # 1Password CLI Utility Install
 
-![example workflow](https://github.com/edwardtheharris/op/actions/workflows/main.yml/badge.svg)
+![shell](https://github.com/edwardtheharris/op/actions/workflows/shellcheck.yml/badge.svg)
+![markdown](https://github.com/edwardtheharris/op/actions/workflows/markdownlint.yml/badge.svg)
 
 This is a simple shell script that is intended to provide a slightly friendlier
 if quick and dirty, interface to the process described
@@ -8,7 +9,7 @@ in the related [1Password docs](http://tinyurl.com/4waw4t7u).
 
 ## Usage
 
-The `install.sh` script requires
+The install script requires
 [bash](https://www.gnu.org/software/bash/manual/bash.html) entirely as
 a matter of the author's personal preference. Hypothetically it could be
 modified to run in some other shell with relatively little effort.
@@ -58,14 +59,14 @@ then extracted to `/tmp/op`. Next, the `op` executable is moved to
 directory.
 
 Finally, the script adds a group called `onepassword-cli`, changes the group
-ownership of `/usr/local/bin/op` to `onepassword-cli`, and sets the `setuid`
+ownership of `/usr/local/bin/op` to `onepassword-cli` then sets the `setuid`
 bit on the executable.
 
 If this completes successfully, the script exits zero.
 
 ## New Versions
 
-At the time of writing the author does not intend add support for automated
+At the time of writing the author does not intend to add support for automated
 version updates, so if you need to download a version other than v2.24.0,
 you will need to update line 23 of the `install.sh` script with the version
 that you need to download.
