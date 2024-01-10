@@ -26,6 +26,8 @@ The prompt method is shown below.
 bash install.sh
 ```
 
+> Input prompt
+
 ```sh
 Please select from the following architectures.
 
@@ -70,10 +72,14 @@ The following was obtained by running the script on the author's workstation.
 
 1. Execution of the script.
 
-   <!-- markdownlint-disable MD013 -->
    ```sh
    bash install.sh amd64
-   ---
+   ```
+
+   > Expected output
+
+   <!-- markdownlint-disable MD013 -->
+   ```sh
    Proceeding with amd64-compatible installation.
    --2024-01-10 11:56:27--  https://cache.agilebits.com/dist/1P/op2/pkg/v2.24.0/op_linux_amd64_v2.24.0.zip
    Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
@@ -97,7 +103,11 @@ The following was obtained by running the script on the author's workstation.
 
    ```sh
    command -v op
-   ---
+   ```
+
+   > Expected output
+
+   ```sh
    /usr/local/bin/op
    ```
 
@@ -106,6 +116,11 @@ The following was obtained by running the script on the author's workstation.
     <!-- markdownlint-disable MD013 -->
    ```sh
    op
+   ```
+
+   > Expected output
+
+   ```sh
    ---
    1Password CLI brings 1Password to your terminal.
 
