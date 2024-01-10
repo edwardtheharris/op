@@ -64,6 +64,97 @@ bit on the executable.
 
 If this completes successfully, the script exits zero.
 
+### Example Output
+
+The following was obtained by running the script on the author's workstation.
+
+1. Execution of the script.
+
+   ```sh
+   bash install.sh amd64
+   ---
+   Proceeding with amd64-compatible installation.
+   --2024-01-10 11:56:27--  https://cache.agilebits.com/dist/1P/op2/pkg/v2.24.0/op_linux_amd64_v2.24.0.zip
+   Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+   Resolving cache.agilebits.com (cache.agilebits.com)... 205.234.175.175
+   Connecting to cache.agilebits.com (cache.agilebits.com)|205.234.175.175|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: 8517044 (8.1M) [application/zip]
+   Saving to: ‘/tmp/op.zip’
+
+   /tmp/op.zip                                                                                         100%[=================================================================================================================================================================================================================================================================>]   8.12M  2.91MB/s    in 2.8s
+
+   2024-01-10 11:56:31 (2.91 MB/s) - ‘/tmp/op.zip’ saved [8517044/8517044]
+
+   Archive:  op.zip
+    extracting: op/op.sig
+     inflating: op/op
+   ```
+
+2. Verification of its location.
+
+   ```sh
+   command -v op
+   ---
+   /usr/local/bin/op
+   ```
+
+3. Verification that the installed program runs as expected.
+
+   ```sh
+   op
+   ---
+   1Password CLI brings 1Password to your terminal.
+
+   Turn on the 1Password app integration and sign in to get started. Run
+   'op signin --help' to learn more.
+
+   For more help, read our documentation:
+   https://developer.1password.com/docs/cli
+
+   1Password CLI is built using open-source software. View our credits and
+   licenses:
+   https://downloads.1password.com/op/credits/stable/credits.html
+
+   Usage:  op [command] [flags]
+
+   Management Commands:
+     account     Manage your locally configured 1Password accounts
+     connect     Manage Connect server instances and tokens in your 1Password account
+     document    Perform CRUD operations on Document items in your vaults
+     events-api  Manage Events API integrations in your 1Password account
+     group       Manage the groups in your 1Password account
+     item        Perform CRUD operations on the 1Password items in your vaults
+     plugin      Manage the shell plugins you use to authenticate third-party CLIs
+     user        Manage users within this 1Password account
+     vault       Manage permissions and perform CRUD operations on your 1Password vaults
+
+   Commands:
+     completion  Generate shell completion information
+     inject      Inject secrets into a config file
+     read        Read a secret reference
+     run         Pass secrets as environment variables to a process
+     signin      Sign in to a 1Password account
+     signout     Sign out of a 1Password account
+     update      Check for and download updates.
+     whoami      Get information about a signed-in account
+
+   Global Flags:
+         --account account    Select the account to execute the command by account shorthand, sign-in address, account ID, or user ID. For a list of available accounts, run 'op account list'. Can be set as the OP_ACCOUNT environment variable.
+         --cache              Store and use cached information. Caching is enabled by default on UNIX-like systems. Caching is not available on Windows. Options: true, false. Can also be set with the OP_CACHE environment variable. (default true)
+         --config directory   Use this configuration directory.
+         --debug              Enable debug mode. Can also be enabled by setting the OP_DEBUG environment variable to true.
+         --encoding type      Use this character encoding type. Default: UTF-8. Supported: SHIFT_JIS, gbk.
+         --format string      Use this output format. Can be 'human-readable' or 'json'. Can be set as the OP_FORMAT environment variable. (default "human-readable")
+     -h, --help               Get help for op.
+         --iso-timestamps     Format timestamps according to ISO 8601 / RFC 3339. Can be set as the OP_ISO_TIMESTAMPS environment variable.
+         --no-color           Print output without color.
+         --session token      Authenticate with this session token. 1Password CLI outputs session tokens for successful 'op signin' commands when 1Password app integration is not enabled.
+     -v, --version            version for op
+
+   Run 'op [command] --help' for more information on the command.
+   ```
+
 ## New Versions
 
 At the time of writing the author does not intend to add support for automated
